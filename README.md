@@ -161,3 +161,5 @@ echo '<node-1>\n<node-2>\n<adservice-node>' | xargs -I @ bash -c 'scp @:/home/ub
     echo 'ip-172-31-25-17\nip-172-31-27-25\nip-172-31-31-167' | xargs -I @ bash -c 'scp @:/home/ubuntu/cdata/"$(ssh @ "ls -Art /home/ubuntu/cdata | tail -n 1")" ./data/@.db3'
 
 </details>
+
+![Online Boutique Architecture](artifacts/online-boutique.png)
