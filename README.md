@@ -162,4 +162,19 @@ echo '<node-1>\n<node-2>\n<adservice-node>' | xargs -I @ bash -c 'scp @:/home/ub
 
 </details>
 
+Run the following python script to generate the service dependency graph: 
+
+```bash
+python services_html.py
+google-chrome-stable services.html
+```
+
+Sort the nodes on your browser based on the following architecture, and validate whether they match:
+
 ![Online Boutique Architecture](artifacts/online-boutique.png)
+
+
+To finalise, we will use the following command to check whether Ripple successfully identified the nodes the services are deployed on:
+```bash
+kubectl get pods -o wide --sort-by=.spec.nodeName
+```
